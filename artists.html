@@ -29,7 +29,7 @@
         <div class="row">
           <div class="col text-center mb-5">
             <h1 class="display-4 font-weight-bolder">Famous artists</h1>
-            <p class="lead">click on an artist to hear a sample song</p>
+            <p class="lead">Hover over an artist to hear a sample song</p>
           </div>
         </div>
         <div class="row">
@@ -40,6 +40,19 @@
                 background-image: url('https://townsquare.media/site/812/files/2022/09/attachment-eminem-9.jpg?w=4388&q=75');
               "
             >
+              <img
+                src="assets/music_bars.gif"
+                alt="Music bars"
+                id="eminem-bars"
+                style="
+                  position: absolute;
+                  right: 0%;
+                  bottom: 0px;
+                  filter: hue-rotate(80deg);
+                  opacity: 0.3;
+                "
+                class="d-none"
+              />
               <div class="card-img-overlay d-flex flex-column">
                 <div class="card-body">
                   <small class="card-meta mb-2">Rap / Hip Hop</small>
@@ -67,6 +80,9 @@
                 </div>
               </div>
             </div>
+            <audio id="eminem-audio">
+              <source src="media/Eminem - Mockingbird.mp3" type="audio/mp3" />
+            </audio>
           </div>
           <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="beat-it">
             <div
@@ -76,8 +92,17 @@
               "
             >
               <img
-                class="card-img d-none"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+                src="assets/music_bars.gif"
+                alt="Music bars"
+                id="beat-it-bars"
+                style="
+                  position: absolute;
+                  right: 0%;
+                  bottom: 0px;
+                  filter: hue-rotate(80deg);
+                  opacity: 0.3;
+                "
+                class="d-none"
               />
               <div class="card-img-overlay d-flex flex-column">
                 <div class="card-body">
@@ -106,14 +131,33 @@
                 </div>
               </div>
             </div>
+            <audio id="beat-it-audio">
+              <source
+                src="media/Michael jackson - Beat It.mp3"
+                type="audio/mp3"
+              />
+            </audio>
           </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="mozart">
             <div
               class="card text-dark card-has-bg click-col"
               style="
                 background-image: url('https://cdn.britannica.com/35/74835-050-F0B71060/canvas-oil-Wolfgang-Amadeus-Mozart-Barbara-Krafft-1819.jpg');
               "
             >
+              <img
+                src="assets/music_bars.gif"
+                alt="Music bars"
+                id="mozart-bars"
+                style="
+                  position: absolute;
+                  right: 0%;
+                  bottom: 0px;
+                  filter: hue-rotate(80deg);
+                  opacity: 0.3;
+                "
+                class="d-none"
+              />
               <div class="card-img-overlay d-flex flex-column">
                 <div class="card-body">
                   <small class="card-meta mb-2">Classics</small>
@@ -140,6 +184,12 @@
                 </div>
               </div>
             </div>
+            <audio id="mozart-audio">
+              <source
+                src="media/Eine Kleine Nachtmusik - Mozart.mp3"
+                type="audio/mp3"
+              />
+            </audio>
           </div>
 
           <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
@@ -265,37 +315,55 @@
       </div>
     </div>
 
-    <audio id="eminem-audio">
-      <source src="media/Eminem - Lose Yourself.mp3" type="audio/mp3" />
-    </audio>
-    <audio id="beat-it-audio">
-      <source src="media/Michael jackson - Beat It.mp3" type="audio/mp3" />
-    </audio>
-
     <script>
       let eminemAudio = document.getElementById("eminem-audio");
       let eminemBtn = document.getElementById("eminem");
+      let eminemBars = document.getElementById("eminem-bars");
       let beatIt = document.getElementById("beat-it");
       let beatItAudio = document.getElementById("beat-it-audio");
+      let beatItBars = document.getElementById("beat-it-bars");
+      let mozartBtn = document.getElementById("mozart");
+      let mozartAudio = document.getElementById("mozart-audio");
+      let mozartBars = document.getElementById("mozart-bars");
 
+      eminemAudio.currentTime = 85.3;
+      beatItAudio.currentTime = 100;
+      mozartAudio.currentTime = 101.5;
+
+      eminemBtn.onmouseover = function () {
+        eminemBars.className = "";
+        eminemAudio.play();
+      };
+      eminemBtn.onmouseout = function () {
+        eminemBars.className = "d-none";
+        eminemAudio.pause();
+      };
       eminemBtn.onclick = function () {
-        if (eminemAudio.paused) {
-          beatItAudio.pause();
-          eminemAudio.currentTime = 250;
-          eminemAudio.play();
-        } else {
-          eminemAudio.pause();
-        }
+        eminemAudio.currentTime = 85.3;
       };
 
+      beatIt.onmouseover = function () {
+        beatItBars.className = "";
+        beatItAudio.play();
+      };
+      beatIt.onmouseout = function () {
+        beatItBars.className = "d-none";
+        beatItAudio.pause();
+      };
       beatIt.onclick = function () {
-        if (beatItAudio.paused) {
-          eminemAudio.pause();
-          beatItAudio.currentTime = 100;
-          beatItAudio.play();
-        } else {
-          beatItAudio.pause();
-        }
+        beatItAudio.currentTime = 100;
+      };
+
+      mozartBtn.onmouseover = function () {
+        mozartBars.className = "";
+        mozartAudio.play();
+      };
+      mozartBtn.onmouseout = function () {
+        mozartBars.className = "d-none";
+        mozartAudio.pause();
+      };
+      mozartBtn.onclick = function () {
+        mozartAudio.currentTime = 101.5;
       };
     </script>
   </body>
