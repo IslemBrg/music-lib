@@ -1,16 +1,10 @@
-/* Styling the background image by 
-    giving its url and position */
-
 * {
   margin: 0px;
   padding: 0px;
   font-family: "Poppins", sans-serif;
 }
 body {
-  /* Created with https://www.css-gradient.com */
   background-image: url("https://c4.wallpaperflare.com/wallpaper/738/744/882/music-vinyl-simple-background-minimalism-wallpaper-preview.jpg");
-
-  /* Image used: */
   background-size: cover;
   background-position: center;
 }
@@ -20,8 +14,6 @@ body {
   position: relative;
 }
 
-/* Styling the list tags to the 
-    right of the navigation bar */
 .nav {
   list-style: none;
   float: right;
@@ -38,8 +30,6 @@ body {
   list-style: none;
 }
 
-/* Styling the anchor tags of 
-    the navigation bar */
 .nav a {
   list-style: none;
   height: 50px;
@@ -52,8 +42,6 @@ body {
   text-decoration: none;
 }
 
-/* Giving position and margin 
-    to the content-div */
 .content {
   width: 100%;
   position: absolute;
@@ -66,29 +54,23 @@ body {
   top: 10%;
 }
 
-/* Styling the left-col by 
-    giving margin */
 .left-col {
   margin-left: 11%;
 }
 
-/* Styling the my sound placed 
-    in the left-col */
 .left-col h1 {
   font-size: 50px;
   color: white;
 }
 
-/* Styling the right-col */
 .right-col {
   float: right;
   margin-right: 6%;
-  margin-top: -6%;
+  margin-top: -7.5%;
   display: flex;
   align-items: center;
 }
 
-/* Styling the text in the right-col */
 .right-col p {
   font-size: 21px;
   color: white;
@@ -99,7 +81,6 @@ body {
   cursor: pointer;
 }
 
-/* card styles */
 h1 {
   color: #fff;
 }
@@ -110,7 +91,6 @@ h1 {
 .wrapper {
   margin: 10vh;
 }
-/* post card styles */
 
 .card {
   border: none;
@@ -208,19 +188,109 @@ h1 {
 @media (max-width: 767px) {
 }
 
+.animated-btn {
+  width: 80;
+  height: 101px;
+  border-radius: 50%;
+  line-height: 80px;
+  display: inline-block;
+  text-align: center;
+  background: #ff3f3f;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.animated-btn::before,
+.animated-btn::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background: rgba(255, 63, 63, 0.8);
+  animation: ripple-1 2s infinite ease-in-out;
+  z-index: -1;
+}
+
+.animated-btn::after {
+  background: rgba(255, 63, 63, 0.6);
+  animation: ripple-2 2s infinite ease-in-out;
+  animation-delay: 0.5s;
+}
+
+@keyframes ripple-1 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-2 {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+
+.btn {
+  color: #fff;
+  background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.1) 0.25em,
+      transparent 0.25em
+    )
+    center/1em 1.2em;
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-decoration: none;
+  place-items: center;
+  margin-top: 20px;
+  letter-spacing: 1px;
+  border-radius: 20px/50px;
+  border: 2px solid #ff3f3f;
+  transition: all 0.5s ease 0s;
+  width: 150px;
+  height: 40px;
+  display: grid;
+}
+.btn:hover,
+.btn:focus {
+  background: radial-gradient(circle, #ff3f3f 0.25em, transparent 0.25em)
+    center/0.1em 0.1em;
+  box-shadow: 4px 4px rgba(253, 238, 172, 0.2);
+}
+@media only screen and (max-width: 767px) {
+  .btn {
+    margin-bottom: 20px;
+  }
+}
+
 audio::-webkit-media-controls-panel {
-  background-color: rgba(
-    255,
-    215,
-    0,
-    0.5
-  ); /* Goldish color with 50% transparency */
+  background-color: rgba(255, 215, 0, 0.5);
 }
 
 audio::-webkit-media-controls-play-button {
-  color: rgba(255, 215, 0, 0.5); /* Goldish color with 50% transparency */
+  color: rgba(255, 215, 0, 0.5);
 }
 
 audio::-webkit-media-controls-volume-slider-container {
-  color: rgba(255, 215, 0, 0.5); /* Goldish color with 50% transparency */
+  color: rgba(255, 215, 0, 0.5);
 }

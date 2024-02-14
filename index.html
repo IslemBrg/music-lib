@@ -4,6 +4,8 @@
     <style>
       @import url("styles.css");
     </style>
+    <title>Islem Sound - Home</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
   </head>
 
   <body>
@@ -18,41 +20,76 @@
 
     <div class="content">
       <div class="left-col">
-        <h1>
-          RETR0 <br />
-          SOUNDS
-        </h1>
+        <h1 style="font-size: 70px">ISLEM SOUNDS</h1>
+        <a class="btn btn-lg" href="music.html">
+          <span>Brows Music</span>
+        </a>
       </div>
 
       <div id="play">
         <div class="right-col">
-          <img src="assets/play-btn.png" id="icon" width="100" height="100" />
+          <div class="text-center">
+            <a class="animated-btn text-white" href="#"
+              ><img
+                src="assets/play-btn.png"
+                id="icon"
+                width="100"
+                height="100"
+            /></a>
+          </div>
         </div>
       </div>
     </div>
 
     <audio id="mysound" autoplay>
-      <source src="media/song land.mp3" type="audio/mp3" />
+      <source id="audio-source" type="audio/mp3" />
     </audio>
 
+    <img
+      src="assets/music_bars.gif"
+      alt="Music bars"
+      id="bars"
+      style="
+        position: absolute;
+        right: 0%;
+        bottom: 0px;
+        filter: hue-rotate(80deg);
+        opacity: 0.3;
+        width: 100%;
+        z-index: -1;
+        display: none;
+      "
+    />
     <script>
+      let playlist = [
+        "media/Eminem - Mockingbird.mp3",
+        "media/Michael jackson - Beat It.mp3",
+        "media/Eine Kleine Nachtmusik - Mozart.mp3",
+        "media/Tony Rebel - If Jah.mp3",
+        "media/Peyton Parrish - Valhalla Calling.mp3",
+        "media/Billie Eilish - bad guy.mp3",
+        "media/song land.mp3",
+      ];
       let mysound = document.getElementById("mysound");
+      let audioSource = document.getElementById("audio-source");
       let btn = document.getElementById("play");
       let icon = document.getElementById("icon");
+      let bars = document.getElementById("bars");
 
-      // Creating a function that will change
-      // pause to play and vice-versa
       btn.onclick = function () {
         if (mysound.paused) {
-          // If paused then play the
-          // music and change the image
+          let randomIndex = Math.floor(Math.random() * playlist.length);
+          audioSource.src = playlist[randomIndex];
+          mysound.load();
           mysound.play();
           icon.src = "assets/pause-btn.png";
+          bars.style =
+            "position: absolute; right: 0%; bottom: 0px; filter: hue-rotate(80deg); opacity: 0.3; width: 100%; z-index: -1;";
         } else {
-          // If playing then pause the
-          // music and change the image
           mysound.pause();
           icon.src = "assets/play-btn.png";
+          bars.style =
+            "position: absolute; right: 0%; bottom: 0px; filter: hue-rotate(80deg); opacity: 0.3; width: 100%; z-index: -1;display:none";
         }
       };
     </script>
