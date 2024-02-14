@@ -10,7 +10,6 @@
     <div class="container">
       <ul class="nav">
         <li><a href="mailto:islem.bargaoui.si@gmail.com">CONTACT</a></li>
-        <li><a href="#">ABOUT</a></li>
         <li><a href="artists.html">ARTISTS</a></li>
         <li><a href="#">MUSIC</a></li>
         <li><a href="#">HOME</a></li>
@@ -27,18 +26,14 @@
 
       <div id="play">
         <div class="right-col">
-          <p>Click Here To Listen</p>
-
           <img src="assets/play-btn.png" id="icon" width="100" height="100" />
         </div>
       </div>
     </div>
 
-    <audio id="mysound">
+    <audio id="mysound" autoplay>
       <source src="media/song land.mp3" type="audio/mp3" />
     </audio>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
     <script>
       let mysound = document.getElementById("mysound");
