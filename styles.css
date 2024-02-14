@@ -130,7 +130,7 @@ h1 {
 
   &.card-has-bg {
     transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
-    background-size: 120%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     &:before {
@@ -204,5 +204,24 @@ h1 {
     );
   }
 }
+
+
 @media (max-width: 767px) {
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: rgba(
+    255,
+    215,
+    0,
+    0.5
+  ); /* Goldish color with 50% transparency */
+}
+
+audio::-webkit-media-controls-play-button {
+  color: rgba(255, 215, 0, 0.5); /* Goldish color with 50% transparency */
+}
+
+audio::-webkit-media-controls-volume-slider-container {
+  color: rgba(255, 215, 0, 0.5); /* Goldish color with 50% transparency */
 }

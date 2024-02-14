@@ -18,8 +18,8 @@
       <div class="fixNav">
         <ul class="nav">
           <li><a href="mailto:islem.bargaoui.si@gmail.com">CONTACT</a></li>
-          <li><a href="#">ARTISTS</a></li>
-          <li><a href="music.html">MUSIC</a></li>
+          <li><a href="artists.html">ARTISTS</a></li>
+          <li><a href="#">MUSIC</a></li>
           <li><a href="index.html">HOME</a></li>
         </ul>
       </div>
@@ -27,8 +27,8 @@
       <div class="artistContent">
         <div class="row">
           <div class="col text-center mb-5">
-            <h1 class="display-4 font-weight-bolder">Famous artists</h1>
-            <p class="lead">Hover over an artist to hear a sample song</p>
+            <h1 class="display-4 font-weight-bolder">Collection of songs</h1>
+            <p class="lead">more songs are coming soon</p>
           </div>
         </div>
         <div class="row">
@@ -36,7 +36,8 @@
             <div
               class="card text-dark card-has-bg click-col"
               style="
-                background-image: url('https://townsquare.media/site/812/files/2022/09/attachment-eminem-9.jpg?w=4388&q=75');
+                background-image: url('https://upload.wikimedia.org/wikipedia/en/thumb/f/fc/Mockingbird_%28Eminem_song%29_cover.jpg/220px-Mockingbird_%28Eminem_song%29_cover.jpg');
+                background-size: cover;
               "
             >
               <img
@@ -55,33 +56,17 @@
               <div class="card-img-overlay d-flex flex-column">
                 <div class="card-body">
                   <small class="card-meta mb-2">Rap / Hip Hop</small>
-                  <h4 class="card-title mt-0">Eminem</h4>
-                  <small
-                    ><i class="far fa-clock"></i> White American rapper,
-                    songwriter, and record producer.</small
-                  >
+                  <h4 class="card-title mt-0">Mockingbird</h4>
+                  <small><i class="far fa-clock"></i> Eminem</small>
                 </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://townsquare.media/site/812/files/2022/09/attachment-eminem-9.jpg?w=4388&q=75"
-                      alt="Generic placeholder image"
-                      style="width: 50px; max-height: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">
-                        Marshall Bruce Mathers III
-                      </h6>
-                      <small>Rapper</small>
-                    </div>
-                  </div>
-                </div>
+                <audio id="eminem-audio" style="opacity: 0.5; width: 100%">
+                  <source
+                    src="media/Eminem - Mockingbird.mp3"
+                    type="audio/mp3"
+                  />
+                </audio>
               </div>
             </div>
-            <audio id="eminem-audio">
-              <source src="media/Eminem - Mockingbird.mp3" type="audio/mp3" />
-            </audio>
           </div>
           <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="beat-it">
             <div
@@ -362,102 +347,62 @@
     </div>
 
     <script>
+      let eminem = document.getElementById("eminem");
       let eminemAudio = document.getElementById("eminem-audio");
-      let eminemBtn = document.getElementById("eminem");
       let eminemBars = document.getElementById("eminem-bars");
-      let beatIt = document.getElementById("beat-it");
       let beatItAudio = document.getElementById("beat-it-audio");
       let beatItBars = document.getElementById("beat-it-bars");
-      let mozartBtn = document.getElementById("mozart");
       let mozartAudio = document.getElementById("mozart-audio");
       let mozartBars = document.getElementById("mozart-bars");
-      let tonyBtn = document.getElementById("tony");
       let tonyAudio = document.getElementById("tony-audio");
       let tonyBars = document.getElementById("tony-bars");
-      let peytonBtn = document.getElementById("peyton");
       let peytonAudio = document.getElementById("peyton-audio");
       let peytonBars = document.getElementById("peyton-bars");
-      let billieBtn = document.getElementById("billie");
       let billieAudio = document.getElementById("billie-audio");
       let billieBars = document.getElementById("billie-bars");
 
-      eminemAudio.currentTime = 85.3;
-      beatItAudio.currentTime = 100;
-      mozartAudio.currentTime = 101.5;
-      tonyAudio.currentTime = 25;
-      peytonAudio.currentTime = 1.5;
-      billieAudio.currentTime = 56;
+      eminem.onmouseover = function () {
+        eminemAudio.controls = true;
+      };
+      eminem.onmouseout = function () {
+        eminemAudio.controls = false;
+      };
 
-      eminemBtn.onmouseover = function () {
+      eminemAudio.onplay = function () {
         eminemBars.className = "";
-        eminemAudio.play();
       };
-      eminemBtn.onmouseout = function () {
+      eminemAudio.onpause = function () {
         eminemBars.className = "d-none";
-        eminemAudio.pause();
       };
-      eminemBtn.onclick = function () {
-        eminemAudio.currentTime = 85.3;
-      };
-
-      beatIt.onmouseover = function () {
+      beatItAudio.onplay = function () {
         beatItBars.className = "";
-        beatItAudio.play();
       };
-      beatIt.onmouseout = function () {
+      beatItAudio.onpause = function () {
         beatItBars.className = "d-none";
-        beatItAudio.pause();
       };
-      beatIt.onclick = function () {
-        beatItAudio.currentTime = 100;
-      };
-
-      mozartBtn.onmouseover = function () {
+      mozartAudio.onplay = function () {
         mozartBars.className = "";
-        mozartAudio.play();
       };
-      mozartBtn.onmouseout = function () {
+      mozartAudio.onpause = function () {
         mozartBars.className = "d-none";
-        mozartAudio.pause();
       };
-      mozartBtn.onclick = function () {
-        mozartAudio.currentTime = 101.5;
-      };
-
-      tonyBtn.onmouseover = function () {
+      tonyAudio.onplay = function () {
         tonyBars.className = "";
-        tonyAudio.play();
       };
-      tonyBtn.onmouseout = function () {
+      tonyAudio.onpause = function () {
         tonyBars.className = "d-none";
-        tonyAudio.pause();
       };
-      tonyBtn.onclick = function () {
-        tonyAudio.currentTime = 25;
-      };
-
-      peytonBtn.onmouseover = function () {
+      peytonAudio.onplay = function () {
         peytonBars.className = "";
-        peytonAudio.play();
       };
-      peytonBtn.onmouseout = function () {
+      peytonAudio.onpause = function () {
         peytonBars.className = "d-none";
-        peytonAudio.pause();
       };
-      peytonBtn.onclick = function () {
-        peytonAudio.currentTime = 1.5;
-      };
-
-      billieBtn.onmouseover = function () {
+      billieAudio.onplay = function () {
         billieBars.className = "";
-        billieAudio.play();
       };
-      billieBtn.onmouseout = function () {
+      billieAudio.onpause = function () {
         billieBars.className = "d-none";
-        billieAudio.pause();
-      };
-      billieBtn.onclick = function () {
-        billieAudio.currentTime = 30;
       };
     </script>
   </body>
