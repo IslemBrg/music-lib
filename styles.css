@@ -1,24 +1,38 @@
-/* Styling the body */
-* {
-  padding: 0;
-  margin: 0;
-}
-
 /* Styling the background image by 
     giving its url and position */
-.container {
-  height: 100vh;
-  width: 100vw;
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  /* Created with https://www.css-gradient.com */
   background-image: url("https://c4.wallpaperflare.com/wallpaper/738/744/882/music-vinyl-simple-background-minimalism-wallpaper-preview.jpg");
 
   /* Image used: */
   background-size: cover;
   background-position: center;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
   position: relative;
 }
 
 /* Styling the list tags to the 
     right of the navigation bar */
+.nav {
+  list-style: none;
+  float: right;
+  margin-right: 0%;
+  margin-top: 2%;
+}
+
+.fixNav {
+  margin-right: -380px;
+  margin-top: 5px;
+}
 .nav li {
   float: right;
   list-style: none;
@@ -44,6 +58,12 @@
   width: 100%;
   position: absolute;
   top: 45%;
+}
+
+.artistContent {
+  width: 100%;
+  position: absolute;
+  top: 10%;
 }
 
 /* Styling the left-col by 
@@ -75,9 +95,6 @@
   font-weight: 650;
   margin-right: 20px;
 }
-
-/* Styling the cursor type 
-    of the icon to pointer */
 #play {
   cursor: pointer;
 }

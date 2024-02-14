@@ -15,63 +15,92 @@
 
   <body>
     <div class="container">
-      <ul class="nav">
-        <li><a href="mailto:islem.bargaoui.si@gmail.com">CONTACT</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">ARTISTS</a></li>
-        <li><a href="#">MUSIC</a></li>
-        <li><a href="index.html">HOME</a></li>
-      </ul>
-    </div>
+      <div class="fixNav">
+        <ul class="nav">
+          <li><a href="mailto:islem.bargaoui.si@gmail.com">CONTACT</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">ARTISTS</a></li>
+          <li><a href="#">MUSIC</a></li>
+          <li><a href="index.html">HOME</a></li>
+        </ul>
+      </div>
 
-    <div class="content">
-      <div class="container">
+      <div class="artistContent">
         <div class="row">
           <div class="col text-center mb-5">
-            <h1 class="display-4 font-weight-bolder">
-              Bootstrap 4 Cards With Background Image
-            </h1>
-            <p class="lead">
-              Lorem ipsum dolor sit amet at enim hac integer volutpat maecenas
-              pulvinar.
-            </p>
+            <h1 class="display-4 font-weight-bolder">Famous artists</h1>
+            <p class="lead">click on an artist to hear a sample song</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="eminem">
             <div
               class="card text-dark card-has-bg click-col"
               style="
-                background-image: url('https://source.unsplash.com/600x900/?tech,street');
+                background-image: url('https://townsquare.media/site/812/files/2022/09/attachment-eminem-9.jpg?w=4388&q=75');
               "
             >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?tech,street"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
               <div class="card-img-overlay d-flex flex-column">
                 <div class="card-body">
-                  <small class="card-meta mb-2">Thought Leadership</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >Web Developmet Lorem Ipsum Sit Amet Consectetur
-                      dipisi?</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2020</small>
+                  <small class="card-meta mb-2">Rap / Hip Hop</small>
+                  <h4 class="card-title mt-0">Eminem</h4>
+                  <small
+                    ><i class="far fa-clock"></i> White American rapper,
+                    songwriter, and record producer.</small
+                  >
                 </div>
                 <div class="card-footer">
                   <div class="media">
                     <img
                       class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                      src="https://townsquare.media/site/812/files/2022/09/attachment-eminem-9.jpg?w=4388&q=75"
                       alt="Generic placeholder image"
-                      style="max-width: 50px"
+                      style="width: 50px; max-height: 50px"
                     />
                     <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <h6 class="my-0 text-dark d-block">
+                        Marshall Bruce Mathers III
+                      </h6>
+                      <small>Rapper</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="beat-it">
+            <div
+              class="card text-dark card-has-bg click-col"
+              style="
+                background-image: url('https://m.media-amazon.com/images/M/MV5BMTM1NjExNjg1OV5BMl5BanBnXkFtZTcwMTQ0NzIwMw@@._V1_FMjpg_UX1000_.jpg');
+              "
+            >
+              <img
+                class="card-img d-none"
+                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
+              />
+              <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+                  <small class="card-meta mb-2">POP</small>
+                  <h4 class="card-title mt-0">michael jackson</h4>
+                  <small
+                    ><i class="far fa-clock"></i> Started young with The Jackson
+                    5, then became a solo megastar with hits like "Thriller" and
+                    "Billie Jean." His music blended pop, soul, funk, and dance,
+                    influencing countless artists.</small
+                  >
+                </div>
+                <div class="card-footer">
+                  <div class="media">
+                    <img
+                      class="mr-3 rounded-circle"
+                      src="https://m.media-amazon.com/images/M/MV5BMTM1NjExNjg1OV5BMl5BanBnXkFtZTcwMTQ0NzIwMw@@._V1_FMjpg_UX1000_.jpg"
+                      alt="Generic placeholder image"
+                      style="width: 50px; max-height: 50px"
+                    />
+                    <div class="media-body">
+                      <h6 class="my-0 text-dark d-block">michael jackson</h6>
+                      <small>King of POP</small>
                     </div>
                   </div>
                 </div>
@@ -82,75 +111,30 @@
             <div
               class="card text-dark card-has-bg click-col"
               style="
-                background-image: url('https://source.unsplash.com/600x900/?tree,nature');
+                background-image: url('https://cdn.britannica.com/35/74835-050-F0B71060/canvas-oil-Wolfgang-Amadeus-Mozart-Barbara-Krafft-1819.jpg');
               "
             >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?tree,nature"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
               <div class="card-img-overlay d-flex flex-column">
                 <div class="card-body">
-                  <small class="card-meta mb-2">Thought Leadership</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >Creative Manner Lorem Ipsum Sit Amet Consectetur
-                      dipisi?</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2020</small>
+                  <small class="card-meta mb-2">Classics</small>
+                  <h4 class="card-title mt-0">Mozart</h4>
+                  <small
+                    ><i class="far fa-clock"></i> Composed over 600 pieces in
+                    his short life, including operas, symphonies, concertos, and
+                    chamber music.</small
+                  >
                 </div>
                 <div class="card-footer">
                   <div class="media">
                     <img
                       class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
+                      src="https://cdn.britannica.com/35/74835-050-F0B71060/canvas-oil-Wolfgang-Amadeus-Mozart-Barbara-Krafft-1819.jpg"
                       alt="Generic placeholder image"
-                      style="max-width: 50px"
+                      style="width: 50px; max-height: 50px"
                     />
                     <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
-            <div
-              class="card text-dark card-has-bg click-col"
-              style="
-                background-image: url('https://source.unsplash.com/600x900/?computer,design');
-              "
-            >
-              <img
-                class="card-img d-none"
-                src="https://source.unsplash.com/600x900/?computer,design"
-                alt="Creative Manner Design Lorem Ipsum Sit Amet Consectetur dipisi?"
-              />
-              <div class="card-img-overlay d-flex flex-column">
-                <div class="card-body">
-                  <small class="card-meta mb-2">Thought Leadership</small>
-                  <h4 class="card-title mt-0">
-                    <a class="text-dark" herf="https://creativemanner.com"
-                      >Design Studio Lorem Ipsum Sit Amet Consectetur dipisi?</a
-                    >
-                  </h4>
-                  <small><i class="far fa-clock"></i> October 15, 2020</small>
-                </div>
-                <div class="card-footer">
-                  <div class="media">
-                    <img
-                      class="mr-3 rounded-circle"
-                      src="https://assets.codepen.io/460692/internal/avatars/users/default.png?format=auto&version=1688931977&width=80&height=80"
-                      alt="Generic placeholder image"
-                      style="max-width: 50px"
-                    />
-                    <div class="media-body">
-                      <h6 class="my-0 text-dark d-block">Oz Coruhlu</h6>
-                      <small>Director of UI/UX</small>
+                      <h6 class="my-0 text-dark d-block">Mozart</h6>
+                      <small>Classical composer</small>
                     </div>
                   </div>
                 </div>
@@ -281,8 +265,38 @@
       </div>
     </div>
 
-    <audio id="mysound">
-      <source src="media/song land.mp3" type="audio/mp3" />
+    <audio id="eminem-audio">
+      <source src="media/Eminem - Lose Yourself.mp3" type="audio/mp3" />
     </audio>
+    <audio id="beat-it-audio">
+      <source src="media/Michael jackson - Beat It.mp3" type="audio/mp3" />
+    </audio>
+
+    <script>
+      let eminemAudio = document.getElementById("eminem-audio");
+      let eminemBtn = document.getElementById("eminem");
+      let beatIt = document.getElementById("beat-it");
+      let beatItAudio = document.getElementById("beat-it-audio");
+
+      eminemBtn.onclick = function () {
+        if (eminemAudio.paused) {
+          beatItAudio.pause();
+          eminemAudio.currentTime = 250;
+          eminemAudio.play();
+        } else {
+          eminemAudio.pause();
+        }
+      };
+
+      beatIt.onclick = function () {
+        if (beatItAudio.paused) {
+          eminemAudio.pause();
+          beatItAudio.currentTime = 100;
+          beatItAudio.play();
+        } else {
+          beatItAudio.pause();
+        }
+      };
+    </script>
   </body>
 </html>
