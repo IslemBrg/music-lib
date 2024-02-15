@@ -97,17 +97,17 @@
       btn.onclick = function () {
         if (mysound.paused) {
           let randomIndex = Math.floor(Math.random() * playlist.length);
+          let barsHue = Math.floor(Math.random() * 360);
           audioSource.src = playlist[randomIndex];
           mysound.load();
           mysound.play();
           icon.src = "assets/pause-btn.png";
           bars.style =
-            "position: absolute; right: 0%; bottom: 0px; filter: hue-rotate(80deg); opacity: 0.3; width: 100%; z-index: -1;";
+            `position: absolute; right: 0%; bottom: 0px; filter: hue-rotate(${barsHue}deg); opacity: 0.3; width: 100%; z-index: -1;`;
         } else {
           mysound.pause();
           icon.src = "assets/play-btn.png";
-          bars.style =
-            "position: absolute; right: 0%; bottom: 0px; filter: hue-rotate(80deg); opacity: 0.3; width: 100%; z-index: -1;display:none";
+          bars.style = "display:none";
         }
       };
     </script>
