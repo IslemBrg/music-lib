@@ -41,7 +41,7 @@
             <p class="lead">more music is coming soon</p>
           </div>
         </div>
-        <div class="row">
+        <div class="row" id="eminem-cat">
           <h2 class="musicHeaders">Eminem</h2>
         </div>
         <div class="row">
@@ -376,7 +376,7 @@
           </div>
         </div>
         <div class="row">
-          <h2 class="musicHeaders">Peyton Parrish</h2>
+          <h2 class="musicHeaders">Peyton Parrish X Miracle of Sound</h2>
         </div>
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="peyton">
@@ -415,7 +415,80 @@
               </div>
             </div>
           </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="ragnarok">
+            <div
+              class="card text-dark card-has-bg click-col"
+              style="
+                background-image: url('https://cdns-images.dzcdn.net/images/cover/08411cb2d4beb1fac5c6ba1cc666544b/500x500.jpg');
+                background-size: cover;
+              "
+            >
+              <img
+                src="assets/music_bars.gif"
+                alt="Music bars"
+                id="ragnarok-bars"
+                style="
+                  position: absolute;
+                  right: 0%;
+                  bottom: 0px;
+                  filter: hue-rotate(80deg);
+                  opacity: 0.3;
+                "
+                class="d-none"
+              />
+              <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+                  <small class="card-meta mb-2">Nordic chanting</small>
+                  <h4 class="card-title mt-0">Drengr Of Ragnarok</h4>
+                  <small><i class="far fa-clock"></i> Peyton Parrish</small>
+                </div>
+                <audio id="ragnarok-audio" style="opacity: 0.5; width: 100%">
+                  <source
+                    src="media/Peyton Parrish - Drengr Of Ragnarok.mp3"
+                    type="audio/mp3"
+                  />
+                </audio>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="skal">
+            <div
+              class="card text-dark card-has-bg click-col"
+              style="
+                background-image: url('https://f4.bcbits.com/img/a0139854638_65');
+                background-size: cover;
+              "
+            >
+              <img
+                src="assets/music_bars.gif"
+                alt="Music bars"
+                id="skal-bars"
+                style="
+                  position: absolute;
+                  right: 0%;
+                  bottom: 0px;
+                  filter: hue-rotate(80deg);
+                  opacity: 0.3;
+                "
+                class="d-none"
+              />
+              <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+                  <small class="card-meta mb-2">Nordic chanting</small>
+                  <h4 class="card-title mt-0">SKÅL!</h4>
+                  <small><i class="far fa-clock"></i> Miracle of Sound</small>
+                </div>
+                <audio id="skal-audio" style="opacity: 0.5; width: 100%">
+                  <source
+                    src="media/SKÅL! by Miracle Of Sound.mp3"
+                    type="audio/mp3"
+                  />
+                </audio>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="row">
           <h2 class="musicHeaders">Billie Eilish</h2>
         </div>
@@ -544,6 +617,12 @@
       let care = document.getElementById("care");
       let careAudio = document.getElementById("care-audio");
       let careBars = document.getElementById("care-bars");
+      let ragnarok = document.getElementById("ragnarok");
+      let ragnarokAudio = document.getElementById("ragnarok-audio");
+      let ragnarokBars = document.getElementById("ragnarok-bars");
+      let skal = document.getElementById("skal");
+      let skalAudio = document.getElementById("skal-audio");
+      let skalBars = document.getElementById("skal-bars");
 
       eminemAudio.load();
       beatItAudio.load();
@@ -557,6 +636,8 @@
       slimAudio.load();
       smoothAudio.load();
       careAudio.load();
+      ragnarokAudio.load();
+      skalAudio.load();
 
       eminem.onmouseover = function () {
         eminemAudio.controls = true;
@@ -569,6 +650,32 @@
           eminemAudio.play();
         } else {
           eminemAudio.pause();
+        }
+      };
+      skal.onmouseover = function () {
+        skalAudio.controls = true;
+      };
+      skal.onmouseout = function () {
+        skalAudio.controls = false;
+      };
+      skal.onclick = function () {
+        if (skalAudio.paused) {
+          skalAudio.play();
+        } else {
+          skalAudio.pause();
+        }
+      };
+      ragnarok.onmouseover = function () {
+        ragnarokAudio.controls = true;
+      };
+      ragnarok.onmouseout = function () {
+        ragnarokAudio.controls = false;
+      };
+      ragnarok.onclick = function () {
+        if (ragnarokAudio.paused) {
+          ragnarokAudio.play();
+        } else {
+          ragnarokAudio.pause();
         }
       };
       care.onmouseover = function () {
@@ -721,6 +828,20 @@
       };
       eminemAudio.onpause = function () {
         eminemBars.className = "d-none";
+      };
+      skalAudio.onplay = function () {
+        skalBars.className = "";
+        localStorage.setItem("played", "skal-audio");
+      };
+      skalAudio.onpause = function () {
+        skalBars.className = "d-none";
+      };
+      ragnarokAudio.onplay = function () {
+        ragnarokBars.className = "";
+        localStorage.setItem("played", "ragnarok-audio");
+      };
+      ragnarokAudio.onpause = function () {
+        ragnarokBars.className = "d-none";
       };
       careAudio.onplay = function () {
         careBars.className = "";
