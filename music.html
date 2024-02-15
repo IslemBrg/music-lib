@@ -145,10 +145,7 @@
                   <small><i class="far fa-clock"></i> Eminem</small>
                 </div>
                 <audio id="god-audio" style="opacity: 0.5; width: 100%">
-                  <source
-                    src="media/Eminem - Rap God.mp3"
-                    type="audio/mp3"
-                  />
+                  <source src="media/Eminem - Rap God.mp3" type="audio/mp3" />
                 </audio>
               </div>
             </div>
@@ -226,6 +223,7 @@
             </div>
           </div>
         </div>
+
         <div class="row">
           <h2 class="musicHeaders">Michael Jackson</h2>
         </div>
@@ -259,6 +257,76 @@
                 <audio id="beat-it-audio" style="opacity: 0.5; width: 100%">
                   <source
                     src="media/Michael jackson - Beat It.mp3"
+                    type="audio/mp3"
+                  />
+                </audio>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="smooth">
+            <div
+              class="card text-dark card-has-bg click-col"
+              style="
+                background-image: url('https://upload.wikimedia.org/wikipedia/en/3/32/Smooth_criminal_video.jpg');
+              "
+            >
+              <img
+                src="assets/music_bars.gif"
+                alt="Music bars"
+                id="smooth-bars"
+                style="
+                  position: absolute;
+                  right: 0%;
+                  bottom: 0px;
+                  filter: hue-rotate(80deg);
+                  opacity: 0.3;
+                "
+                class="d-none"
+              />
+              <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+                  <small class="card-meta mb-2">POP</small>
+                  <h4 class="card-title mt-0">Smooth Criminal</h4>
+                  <small><i class="far fa-clock"></i> Michael Jackson</small>
+                </div>
+                <audio id="smooth-audio" style="opacity: 0.5; width: 100%">
+                  <source
+                    src="media/Michael Jackson - Smooth Criminal.mp3"
+                    type="audio/mp3"
+                  />
+                </audio>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 col-lg-4 mb-4" id="care">
+            <div
+              class="card text-dark card-has-bg click-col"
+              style="
+                background-image: url('https://m.media-amazon.com/images/M/MV5BZjVjOTViMWMtZjk4NC00ZDBmLWIyZTAtMGVlY2MwZDk5MjY1XkEyXkFqcGdeQXVyNDQ5MDYzMTk@._V1_.jpg');
+              "
+            >
+              <img
+                src="assets/music_bars.gif"
+                alt="Music bars"
+                id="care-bars"
+                style="
+                  position: absolute;
+                  right: 0%;
+                  bottom: 0px;
+                  filter: hue-rotate(80deg);
+                  opacity: 0.3;
+                "
+                class="d-none"
+              />
+              <div class="card-img-overlay d-flex flex-column">
+                <div class="card-body">
+                  <small class="card-meta mb-2">POP</small>
+                  <h4 class="card-title mt-0">They Don't Care About Us</h4>
+                  <small><i class="far fa-clock"></i> Michael Jackson</small>
+                </div>
+                <audio id="care-audio" style="opacity: 0.5; width: 100%">
+                  <source
+                    src="media/Michael Jackson - They Dont Care About Us.mp3"
                     type="audio/mp3"
                   />
                 </audio>
@@ -470,6 +538,12 @@
       let slim = document.getElementById("slim");
       let slimAudio = document.getElementById("slim-audio");
       let slimBars = document.getElementById("slim-bars");
+      let smooth = document.getElementById("smooth");
+      let smoothAudio = document.getElementById("smooth-audio");
+      let smoothBars = document.getElementById("smooth-bars");
+      let care = document.getElementById("care");
+      let careAudio = document.getElementById("care-audio");
+      let careBars = document.getElementById("care-bars");
 
       eminemAudio.load();
       beatItAudio.load();
@@ -481,6 +555,8 @@
       godAudio.load();
       withoutAudio.load();
       slimAudio.load();
+      smoothAudio.load();
+      careAudio.load();
 
       eminem.onmouseover = function () {
         eminemAudio.controls = true;
@@ -493,6 +569,32 @@
           eminemAudio.play();
         } else {
           eminemAudio.pause();
+        }
+      };
+      care.onmouseover = function () {
+        careAudio.controls = true;
+      };
+      care.onmouseout = function () {
+        careAudio.controls = false;
+      };
+      care.onclick = function () {
+        if (careAudio.paused) {
+          careAudio.play();
+        } else {
+          careAudio.pause();
+        }
+      };
+      smooth.onmouseover = function () {
+        smoothAudio.controls = true;
+      };
+      smooth.onmouseout = function () {
+        smoothAudio.controls = false;
+      };
+      smooth.onclick = function () {
+        if (smoothAudio.paused) {
+          smoothAudio.play();
+        } else {
+          smoothAudio.pause();
         }
       };
       slim.onmouseover = function () {
@@ -619,6 +721,20 @@
       };
       eminemAudio.onpause = function () {
         eminemBars.className = "d-none";
+      };
+      careAudio.onplay = function () {
+        careBars.className = "";
+        localStorage.setItem("played", "care-audio");
+      };
+      careAudio.onpause = function () {
+        careBars.className = "d-none";
+      };
+      smoothAudio.onplay = function () {
+        smoothBars.className = "";
+        localStorage.setItem("played", "smooth-audio");
+      };
+      smoothAudio.onpause = function () {
+        smoothBars.className = "d-none";
       };
       slimAudio.onplay = function () {
         slimBars.className = "";
